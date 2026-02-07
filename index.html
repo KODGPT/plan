@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>План расходов</title>
+  <link rel="icon" href="icon128.png" type="image/png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="panel">
+    <h2>Новый расход</h2>
+
+    <select id="period">
+      <option value="daily">Ежедневный</option>
+      <option value="weekly">Еженедельный</option>
+      <option value="monthly" selected>Ежемесячный</option>
+      <option value="yearly">Ежегодный</option>
+    </select>
+
+    <input id="title" placeholder="Описание расхода">
+    <input id="amount" type="number" placeholder="Сумма ₽" min="0">
+
+    <button id="save">Добавить</button>
+  </aside>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-cards">
+        <div class="hero-card">
+          <div class="value" id="mainValue">0 ₽</div>
+          <span>Необходимо откладывать с каждой зарплаты</span>
+        </div>
+        <div class="hero-card">
+          <div class="value" id="totalYearValue">0 ₽</div>
+          <span>Итого все постоянные расходы в год</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="list" id="list"></ul>
+
+    <div class="backup-controls">
+      <button id="exportJson">Экспорт JSON</button>
+      <button id="importJson">Импорт JSON</button>
+      <input type="file" id="importFile" accept=".json" style="display: none;">
+    </div>
+
+  </main>
+</div>
+
+<div class="loader hidden" id="loader"></div>
+
+<div class="modal hidden" id="confirmModal">
+  <div class="modal-content">
+    <p>Удалить расход?</p>
+    <div class="modal-actions">
+      <button class="cancel" id="cancelDelete">Отмена</button>
+      <button class="confirm" id="confirmDelete">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="editModal">
+  <div class="modal-content">
+    <h3>Редактировать расход</h3>
+    <select id="editPeriod">
+      <option value="daily">Ежедневный</option>
+      <option value="weekly">Еженедельный</option>
+      <option value="monthly">Ежемесячный</option>
+      <option value="yearly">Ежегодный</option>
+    </select>
+    <input id="editTitle" placeholder="Описание расхода">
+    <input id="editAmount" type="number" placeholder="Сумма ₽" min="0">
+    <div class="modal-actions">
+      <button class="cancel" id="cancelEdit">Отмена</button>
+      <button class="confirm" id="confirmEdit">Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Layout */
+.app {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Left panel */
+.panel {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panel h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.4rem;
+  color: #e2e8f0;
+}
+
+.panel input,
+.panel select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-size: 1rem;
+}
+
+.panel select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+.panel select option {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.panel input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.panel button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.panel #save {
+  background: #22c55e;
+  color: black;
+}
+
+.panel #save:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+/* Content */
+.content {
+  padding: 32px 40px;
+  overflow-y: auto;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 32px;
+  min-width: 260px;
+  max-width: 555px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.hero-card .value {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #22c55e;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.hero-card span {
+  display: block;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+/* List */
+.list {
+  list-style: none;
+}
+
+.group-title {
+  margin: 40px 0 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(165, 180, 252, 0.12);
+}
+
+.group-title strong {
+  font-size: 1.4rem;
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
+.list li.item {
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.list li.item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.list li.item span {
+  flex: 1;
+  font-size: 1.05rem;
+}
+
+.list li.item button {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-left: 12px;
+  line-height: 1;
+}
+
+.list li.item button:hover {
+  color: #ef4444;
+  transform: scale(1.15);
+}
+
+/* Backup controls */
+.backup-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+  padding-bottom: 24px;
+}
+
+.backup-controls button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  background: #64748b;
+  color: white;
+}
+
+.backup-controls button:hover {
+  background: #475569;
+  transform: translateY(-1px);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #0f172a;
+  padding: 28px;
+  border-radius: 16px;
+  width: 360px;
+  max-width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(0.92);
+  transition: transform 0.22s ease;
+}
+
+.modal:not(.hidden) .modal-content {
+  transform: scale(1);
+}
+
+.modal-content h3 {
+  margin: 0 0 20px;
+  color: #e2e8f0;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-actions .cancel {
+  background: #334155;
+  color: white;
+}
+
+.modal-actions .cancel:hover {
+  background: #475569;
+}
+
+.modal-actions .confirm {
+  background: #ef4444;
+  color: white;
+}
+
+.modal-actions .confirm:hover {
+  background: #dc2626;
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.loader::before {
+  content: '';
+  width: 44px;
+  height: 44px;
+  border: 5px solid #22c55e;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Фикс читаемости select */
+.panel select,
+.modal select {
+  color: #e5e7eb;
+  background: rgba(255,255,255,0.06);
+}
+
+.panel select option,
+.modal select option {
+  background-color: #1e293b !important;
+  color: #e5e7eb !important;
+  padding: 8px;
+}
+
+.panel select:focus,
+.modal select:focus {
+  outline: 2px solid #22c55e;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 768px) {
+  .hero-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  .hero-card .value {
+    font-size: 2.8rem;
+  }
+
+  .backup-controls {
+    justify-content: center;
+  }
+}
+/* Убираем стрелки у input[type=number] */
+
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
