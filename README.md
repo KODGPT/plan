@@ -3,6 +3,16 @@
 🔗 [Веб-версия приложения](https://artemomskartemomsk-wq.github.io/Plan/)  
 📦 [Скачать расширение для браузера](https://github.com/artemomskartemomsk-wq/Plan/blob/main/%D0%9F%D0%BB%D0%B0%D0%BD%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0.zip)
 
+<a href="https://artemomskartemomsk-wq.github.io/Plan/" target="_blank" rel="noopener noreferrer">
+  🔗 Веб-версия приложения
+</a>
+
+<br>
+
+<a href="https://github.com/artemomskartemomsk-wq/Plan/blob/main/%D0%9F%D0%BB%D0%B0%D0%BD%20%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0.zip" target="_blank" rel="noopener noreferrer">
+  📦 Скачать расширение для браузера
+</a>
+
 Простое приложение, чтобы понять, сколько реально нужно откладывать с каждой зарплаты, чтобы покрыть все регулярные траты.
 
 Показывает:
